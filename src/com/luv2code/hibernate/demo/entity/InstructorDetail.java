@@ -23,7 +23,8 @@ public class InstructorDetail {
     private String hobby;
 
     //add a new field for instructor + getter and setter
-    @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "instructorDetail",cascade = {CascadeType.DETACH
+    ,CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Instructor instructor;
 
     // create constructor
